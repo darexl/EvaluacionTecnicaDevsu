@@ -4,18 +4,19 @@
 
 This is a simple application to be used in the technical test of DevOps.
 
-**Steps Done!**
+# Steps Done!
 
 ### 1. Run and Create .jar file
 
-The application was
+The application was executed with its database and .jar file to create the Docker image.
 
 ### 2. GitHub
 
+Upload to a new repository in GitHub.
+
 ### 3. Dockerization
 
-The application was containerized using Docker with the .jar file from the application. 
-The Dockerfile was created to package the application and its dependencies into a Docker image. The following considerations were taken into account:
+The Dockerfile was created to package the .jar application and its dependencies into a Docker image. The following considerations were taken into account:
    - Environment variables
    - Run user
    - Port configuration
@@ -23,9 +24,14 @@ The Dockerfile was created to package the application and its dependencies into 
 
 ### 4. GCP (Google Cloud Platform)
 
-### 5. Kubernetes Engine & Loading Balance
+Connect our pipeline and Docker with GCP services using Kubernetes Engine and Loading Balance.
 
-### 6. Using OpenLens
+### 5. Using OpenLens
+
+The client could verify the cluster is working correctly by visualizing the Nodes, Pods, Deployments, ConfigMaps, Services, Endpoints, etc.
+
 
 # Pipeline Process
-![PipelineProcessGCP](https://github.com/darexl/EvaluacionTecnicaDevsu/assets/26086022/68eb4b0c-b252-4464-8dde-7b7139a9e180)
+![PipelineProcessGCP](https://github.com/darexl/EvaluacionTecnicaDevsu/assets/26086022/14b5fee6-718a-4674-9041-fe9df65e6e24)
+
+# Verify Connection
