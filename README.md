@@ -1,2 +1,1 @@
-# EvaluacionTecnicaDevsu
-Evaluación Técnica de Devsu
+# Evaluacion Tecnica Devsu
