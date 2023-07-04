@@ -1,0 +1,57 @@
+name: Java CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+variables:
+  - name: CloudProjectKey
+    value: $(CLOUDPROJECTSONAR)
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+
+      - name: Build and Package
+        run: mvn clean package
+
+      - name: Run Unit Tests
+        run: mvn test
+
+      - name: Static Code Analysis
+        run: mvn sonar:sonar -Dsonar.projectKey=$(CloudProjectKey)
+
+      - name: Code Coverage
+        run: mvn clean test
+
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: Dockerfile
+          push: true
+          tags: YourDockerRegistry/your-image-name:latest
+
+
+      - name: Configure Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@v0.5.0
+        with:
+          version: '350.0.0'
+          service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+          project_id: YourGCPProjectID
+
+      - name: Deploy to Google Cloud Run
+        run: |
+          gcloud run deploy YourServiceName \
+            --image=YourDockerRegistry/your-image-name:latest \
+            --platform=managed \
+            --region=YourGCPRegion
