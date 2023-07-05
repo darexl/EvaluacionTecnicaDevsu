@@ -4,8 +4,14 @@
 
 This is a simple application to be used in the technical test of DevOps.
 
-# Steps Done!
+### IMPORTANT NOTES
 
+- The terraform file has been created, due to security reasons the key file can't be uploaded to a public repository.
+- URLs of the Endpoints:
+  - API/USERS -> http://35.222.31.116/api/users
+  - SWAGGER UI -> http://35.222.31.116/api/swagger-ui/index.html
+
+# Steps Done!
 ### 1. Run and Create .jar file
 
 The application was executed with its database and .jar file to create the Docker image.
