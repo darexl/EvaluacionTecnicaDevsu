@@ -4,12 +4,14 @@
 
 This is a simple application to be used in the technical test of DevOps.
 
-### IMPORTANT NOTES
+### IMPORTANT NOTES!
 
 - The terraform file has been created, due to security reasons the key file can't be uploaded to a public repository.
 - URLs of the Endpoints:
   - API/USERS -> http://35.222.31.116/api/users
   - SWAGGER UI -> http://35.222.31.116/api/swagger-ui/index.html
+- URL of the DockerHub Repository:
+  - https://hub.docker.com/r/dgleon/evaluacion-tecnica
 
 # Steps Done!
 ### 1. Run and Create .jar file
@@ -23,10 +25,10 @@ Upload to a new repository in GitHub.
 ### 3. Dockerization
 
 The Dockerfile was created to package the .jar application and its dependencies into a Docker image. The following considerations were taken into account:
-- Environment variables
-- Run user
-- Port configuration
-- Health check setup
+   - Environment variables
+   - Run user
+   - Port configuration
+   - Health check setup
 
 ### 4. GCP (Google Cloud Platform)
 
@@ -53,5 +55,3 @@ Google Cloud Platform
 
 OpenLens
 <img width="1440" alt="Open Lens Overview" src="https://github.com/darexl/EvaluacionTecnicaDevsu/assets/26086022/e107f577-8350-41a8-b349-997e8476237e">
-
-
