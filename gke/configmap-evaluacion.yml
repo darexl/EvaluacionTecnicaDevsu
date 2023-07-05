@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-evaluacion
+  namespace: evaluacion
+data:
+  puerto: 8000
