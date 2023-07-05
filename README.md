@@ -1,142 +1,37 @@
-# Demo Devops Java
+# Evaluación Técnica Devsu
+
+## Demo DevOps - Java
 
 This is a simple application to be used in the technical test of DevOps.
 
-## Getting Started
+# Steps Done!
 
-### Prerequisites
+### 1. Run and Create .jar file
 
-- Java Version 17
-- Spring Boot 3.0.5
-- Maven
+The application was executed with its database and .jar file to create the Docker image.
 
-### Installation
+### 2. GitHub
 
-Clone this repo.
+Upload to a new repository in GitHub.
 
-```bash
-git clone https://bitbucket.org/devsu/demo-devops-java.git
-```
+### 3. Dockerization
 
-### Database
+The Dockerfile was created to package the .jar application and its dependencies into a Docker image. The following considerations were taken into account:
+   - Environment variables
+   - Run user
+   - Port configuration
+   - Health check setup
 
-The database is generated as a file in the main path when the project is first run, and its name is `test.mv.db`.
+### 4. GCP (Google Cloud Platform)
 
-Consider giving access permissions to the file for proper functioning.
+Connect our pipeline and Docker with GCP services using Kubernetes Engine and Loading Balance.
 
-## Usage
+### 5. Using OpenLens
 
-To run tests you can use this command.
+The client could verify the cluster is working correctly by visualizing the Nodes, Pods, Deployments, ConfigMaps, Services, Endpoints, etc.
 
-```bash
-mvn clean test
-```
 
-To run locally the project you can use this command.
+# Pipeline Process
+![PipelineProcessGCP](https://github.com/darexl/EvaluacionTecnicaDevsu/assets/26086022/14b5fee6-718a-4674-9041-fe9df65e6e24)
 
-```bash
-mvn spring-boot:run
-```
-
-Open http://127.0.0.1:8000/api/swagger-ui.html with your browser to see the result.
-
-### Features
-
-These services can perform,
-
-#### Create User
-
-To create a user, the endpoint **/api/users** must be consumed with the following parameters:
-
-```bash
-  Method: POST
-```
-
-```json
-{
-    "dni": "dni",
-    "name": "name"
-}
-```
-
-If the response is successful, the service will return an HTTP Status 200 and a message with the following structure:
-
-```json
-{
-    "id": 1,
-    "dni": "dni",
-    "name": "name"
-}
-```
-
-If the response is unsuccessful, we will receive status 400 and the following message:
-
-```json
-{
-    "errors": [
-        "error"
-    ]
-}
-```
-
-#### Get Users
-
-To get all users, the endpoint **/api/users** must be consumed with the following parameters:
-
-```bash
-  Method: GET
-```
-
-If the response is successful, the service will return an HTTP Status 200 and a message with the following structure:
-
-```json
-[
-    {
-        "id": 1,
-        "dni": "dni",
-        "name": "name"
-    }
-]
-```
-
-#### Get User
-
-To get an user, the endpoint **/api/users/<id>** must be consumed with the following parameters:
-
-```bash
-  Method: GET
-```
-
-If the response is successful, the service will return an HTTP Status 200 and a message with the following structure:
-
-```json
-{
-    "id": 1,
-    "dni": "dni",
-    "name": "name"
-}
-```
-
-If the user id does not exist, we will receive status 404 and the following message:
-
-```json
-{
-    "errors": [
-        "User not found: <id>"
-    ]
-}
-```
-
-If the response is unsuccessful, we will receive status 400 and the following message:
-
-```json
-{
-    "errors": [
-        "error"
-    ]
-}
-```
-
-## License
-
-Copyright © 2023 Devsu. All rights reserved.
+# Verify Connection
