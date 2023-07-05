@@ -32,7 +32,7 @@ jobs:
         run: mvn test
 
       - name: Static Code Analysis
-        run: mvn sonar:sonar -Dsonar.projectKey=$(CloudProjectKey)
+        run: mvn sonar:sonar -Dsonar.projectKey=${CloudProjectKey}
 
       - name: Code Coverage
         run: mvn clean test
@@ -43,7 +43,7 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: $(DockerRegistry)/$(ImageName):latest
+          tags: ${DockerRegistry}/${ImageName}:latest
 
       - name: Configure Google Cloud SDK
         uses: google-github-actions/setup-gcloud@v0.5.0
